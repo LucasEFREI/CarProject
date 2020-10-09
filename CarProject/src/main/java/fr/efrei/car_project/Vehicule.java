@@ -1,19 +1,19 @@
-package fr.efrei.CarProject;
+package fr.efrei.car_project;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Car extends Vehicule {
+public class Vehicule {
     //------------------------------------------------------------------------------------------------------------------
-    private int numberOfSeats;
-
-    public int getNumberOfSeats() {
-        return numberOfSeats;
+    private String plateNumber;
+    @Id
+    public String getPlateNumber(){
+        return plateNumber;
     }
 
-    public void setNumberOfSeats(int numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
     }
     //------------------------------------------------------------------------------------------------------------------
 }

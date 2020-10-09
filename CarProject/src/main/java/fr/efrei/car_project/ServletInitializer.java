@@ -1,4 +1,4 @@
-package fr.efrei.CarProject;
+package fr.efrei.car_project;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

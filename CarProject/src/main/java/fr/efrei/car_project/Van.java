@@ -1,4 +1,4 @@
-package fr.efrei.CarProject;
+package fr.efrei.car_project;
 
 import javax.persistence.Entity;
 

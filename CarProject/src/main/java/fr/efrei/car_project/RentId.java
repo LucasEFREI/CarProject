@@ -1,33 +1,18 @@
-package fr.efrei.CarProject;
+package fr.efrei.car_project;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import java.io.Serializable;
 import java.util.Date;
 
-@IdClass(RentId.class)
-@Entity
-public class Rent {
+public class RentId implements Serializable {
     //------------------------------------------------------------------------------------------------------------------
     private Date beginRent;
-    @Id
-    public Date getBeginRent() {
-        return beginRent;
-    }
-
-    public void setBeginRent(Date beginRent) {
-        this.beginRent = beginRent;
-    }
-    //------------------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------------------
     private Date endRent;
-    @Id
-    public Date getEndRent() {
-        return endRent;
-    }
-
-    public void setEndRent(Date endRent) {
-        this.endRent = endRent;
+    //------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------
+    public RentId(Date beginRent, Date endRent)
+    {
+        this.beginRent=beginRent;
+        this.endRent=endRent;
     }
     //------------------------------------------------------------------------------------------------------------------
 }
