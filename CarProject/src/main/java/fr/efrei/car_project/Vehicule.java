@@ -1,12 +1,13 @@
 package fr.efrei.car_project;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Vehicule {
     //------------------------------------------------------------------------------------------------------------------
     private String plateNumber;
+
     @Id
     public String getPlateNumber(){
         return plateNumber;
@@ -16,4 +17,6 @@ public class Vehicule {
         this.plateNumber = plateNumber;
     }
     //------------------------------------------------------------------------------------------------------------------
+    @ManyToMany
+    private List<Rent> rentList;
 }

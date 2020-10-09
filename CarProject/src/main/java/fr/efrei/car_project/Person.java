@@ -2,6 +2,7 @@ package fr.efrei.car_project;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Person {
@@ -16,4 +17,6 @@ public class Person {
         this.name = name;
     }
     //------------------------------------------------------------------------------------------------------------------
+    @ManyToOne
+    private Rent rent;
 }

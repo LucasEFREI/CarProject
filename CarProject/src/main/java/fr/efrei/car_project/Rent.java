@@ -1,9 +1,8 @@
 package fr.efrei.car_project;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @IdClass(RentId.class)
 @Entity
@@ -30,4 +29,9 @@ public class Rent {
         this.endRent = endRent;
     }
     //------------------------------------------------------------------------------------------------------------------
+    @ManyToMany
+    private List<Vehicule> vehiculeList;
+
+    @OneToMany
+    private List<Person> personList;
 }
