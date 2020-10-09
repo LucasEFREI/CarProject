@@ -5,10 +5,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Vehicule {
-    @Id
-    private String plateNumber;
-
     //------------------------------------------------------------------------------------------------------------------
+    private String plateNumber;
     @Id
     public String getPlateNumber(){
         return plateNumber;
@@ -17,4 +15,5 @@ public class Vehicule {
     public void setPlateNumber(String plateNumber) {
         this.plateNumber = plateNumber;
     }
+    //------------------------------------------------------------------------------------------------------------------
 }

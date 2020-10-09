@@ -5,10 +5,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Person {
-    @Id
-    private String name;
-
     //------------------------------------------------------------------------------------------------------------------
+    private String name;
     @Id
     public String getName(){
         return name;
@@ -17,4 +15,5 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+    //------------------------------------------------------------------------------------------------------------------
 }
