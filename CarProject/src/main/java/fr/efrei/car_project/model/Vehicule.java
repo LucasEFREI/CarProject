@@ -6,9 +6,9 @@ import java.util.List;
 @Entity
 public class Vehicule {
     //------------------------------------------------------------------------------------------------------------------
+    @Id
     private String plateNumber;
 
-    @Id
     public String getPlateNumber(){
         return plateNumber;
     }
