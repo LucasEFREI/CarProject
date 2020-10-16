@@ -1,4 +1,4 @@
-package fr.efrei.car_project;
+package fr.efrei.car_project.model;
 
 import javax.persistence.*;
 
@@ -23,6 +23,6 @@ public class Person {
 
     public void setId(long id) { this.id = id; }
     //------------------------------------------------------------------------------------------------------------------
-    @ManyToOne
-    private Rent rent;
+    /*@ManyToOne
+    private Rent rent;*/
 }

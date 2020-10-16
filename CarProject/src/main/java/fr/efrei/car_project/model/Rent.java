@@ -1,26 +1,42 @@
-package fr.efrei.car_project;
+package fr.efrei.car_project.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@IdClass(RentId.class)
 @Entity
 public class Rent {
     //------------------------------------------------------------------------------------------------------------------
-    private Date beginRent;
+    @ManyToMany
+    private List<Vehicule> vehicules;
+
     @Id
-    public Date getBeginRent() {
-        return beginRent;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    private Date beginRent;
+    private Date endRent;
+
+    public Rent() {
+        super();
     }
+
+    public Rent(Date beginRent, Date endRent){
+        super();
+        this.vehicules=new ArrayList<>();
+        this.beginRent=beginRent;
+        this.endRent=endRent;
+    }
+
+    public Date getBeginRent() { return beginRent; }
 
     public void setBeginRent(Date beginRent) {
         this.beginRent = beginRent;
     }
-    //------------------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------------------
-    private Date endRent;
-    @Id
+
     public Date getEndRent() {
         return endRent;
     }
@@ -28,10 +44,21 @@ public class Rent {
     public void setEndRent(Date endRent) {
         this.endRent = endRent;
     }
-    //------------------------------------------------------------------------------------------------------------------
-    @ManyToMany
-    private List<Vehicule> vehiculeList;
 
-    @OneToMany
-    private List<Person> personList;
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id=id; }
+
+    public List<Vehicule> getVehicules() { return vehicules; }
+
+    public void setVehicules(List<Vehicule> vehicules) { this.vehicules= vehicules; }
+
+    @Override
+    public String toString() {
+        return "Rent [id=" + id + ", beginRent=" + beginRent + ", endRent=" + endRent + "]";
+    }
+
+
+    /*@OneToMany
+    private List<Person> persons;*/
 }
