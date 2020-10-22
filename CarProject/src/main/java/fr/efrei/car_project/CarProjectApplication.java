@@ -10,12 +10,14 @@ import fr.efrei.car_project.web.VehiculeController;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 
 @SpringBootApplication
 public class CarProjectApplication {
@@ -24,11 +26,12 @@ public class CarProjectApplication {
 		SpringApplication.run(CarProjectApplication.class, args);
 	}
 
-
+/*
 	@Bean
 	public CommandLineRunner demo(VehiculeController controller) {
+
 		return (args) -> {
-			/*
+/*
 			SimpleDateFormat beginDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date beginDate = beginDateFormat.parse("2018-10-09");
 			System.out.println(beginDate.toString());
@@ -42,11 +45,13 @@ public class CarProjectApplication {
 			v1.getRents().add(r1);
 			r1.getVehicules().add(v1);
 			*/
+			/*
 			controller.addVehicule();
 			controller.addVehicule();
 			controller.addVehicule();
 			controller.addVehicule();
 			controller.addVehicule();
+			*/
 			/*
 			repository.save(aby1234);
 
@@ -68,9 +73,9 @@ public class CarProjectApplication {
 			System.out.println("Vehicule found with findName('ABY8512'):");
 			repository.findByPlateNumber("ABY8512").forEach(vehicule -> {
 				System.out.println(vehicule.toString());
-			});*/
+			});
 
 		};
-	}
+	}*/
 
 }

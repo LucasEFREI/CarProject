@@ -11,26 +11,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class VehiculeController {
 
+    private List<Vehicule> vehicules = new ArrayList<Vehicule>();
+    @Autowired
     VehiculeService vehiculeService;
 
-    @Autowired
     public VehiculeController(VehiculeService vehiculeService) {
         super();
         this.vehiculeService = vehiculeService;
     }
 
-    @GetMapping("/vehicules")
+    @GetMapping("/vehicule")
     public Iterable<Vehicule> getVehicules() {
-        return vehiculeService.findAll();
+        return vehicules;
+        //return vehiculeService.findAll();
     }
 
-    @GetMapping("/add") //need to change to PostMapping (cf. CarService github of M.Charroux) [add files of webapp] https://github.com/charroux/CarService
+    @PostMapping("/vehicule") //need to change to PostMapping (cf. CarService github of M.Charroux) [add files of webapp] https://github.com/charroux/CarService
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addVehicule() throws Exception {
         Vehicule v1 = new Vehicule(vehiculeService.generatePlateNumber());
+        vehicules.add(v1);
         vehiculeService.save(v1);
         if(v1.getPlateNumber().equals("AAAAAAA")){
             throw new Exception();

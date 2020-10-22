@@ -25,7 +25,6 @@ public class VehiculeService {
             char c = (char) ('A' + rnd.nextInt(26));
             plateNumber += c;
         }
-        //plateNumber.toUpperCase();
         for (int i=0; i<=3; i++) {
             Random rnd = new Random();
             int ri =  rnd.nextInt(10);
