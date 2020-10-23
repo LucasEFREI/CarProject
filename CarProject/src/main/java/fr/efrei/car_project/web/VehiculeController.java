@@ -32,7 +32,7 @@ public class VehiculeController {
         //return vehiculeService.findAll();
     }
 
-    @PostMapping("/vehicule") //need to change to PostMapping (cf. CarService github of M.Charroux) [add files of webapp] https://github.com/charroux/CarService
+    @PostMapping("/vehicule")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addVehicule() throws Exception {
         Vehicule v1 = new Vehicule(vehiculeService.generatePlateNumber());
@@ -42,5 +42,7 @@ public class VehiculeController {
             throw new Exception();
         }
     }
+
+    //@DeleteMapping
 
 }
