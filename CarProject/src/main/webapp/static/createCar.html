@@ -19,13 +19,12 @@
 <script>
 function sendCar() {
     var text = '{"';
-    text += 'plateNumber":"' + document.getElementById("plateNumberId").value + '"}'
-    
-    var car = JSON.parse(text); 
+    text += 'plateNumber":"' + '"}'
+
+    var car = JSON.parse(text);
     
     var httpRequest = new XMLHttpRequest();
     httpRequest.open('POST', "http://localhost:8080/vehicule", true);
-    httpRequest.setRequestHeader("Content-type", "application/json");
     httpRequest.send(JSON.stringify(car));
     
 }
